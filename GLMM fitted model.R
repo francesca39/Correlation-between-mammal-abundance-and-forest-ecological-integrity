@@ -1,12 +1,12 @@
-# Add this to your R code:
+# libraries:
 .libPaths(c("/projappl/project_2009874/project_rpackages_4.3.2", .libPaths()))
 libpath <- .libPaths()[1]
 install.packages("performance")
 install.packages("MuMIn")
 
-# This command can be used to check that the folder is now visible:
-.libPaths() # It should be first on the list
-# Load necessary libraries
+
+.libPaths() 
+
 library(dplyr)
 library(performance)
 library(glmmTMB)
@@ -17,7 +17,7 @@ library(readxl)
 
 # Define the dataset filenames with full paths
 file_path <- "Desktop/species/"  # Adjust this path as needed
-datasets <- c("mountainhare3.xlsx", "pinemarten3.xlsx", "forestreindeer3.xlsx", "lynx3.xlsx", "wolf3.xlsx", "wolverine3.xlsx", "otter3.xlsx", "moose3.xlsx","brownhare3.xlsx", "ermine3.xlsx", "roedeer3.xlsx", "mink3.xlsx", "redfox3.xlsx", "redsquirrel3.xlsx", "racoondog3.xlsx", "wtaileddeer3.xlsx", "weasel3.xlsx")
+datasets <- c("mountainhare.xlsx", "pinemarten.xlsx", "forestreindeer.xlsx", "lynx.xlsx", "wolf.xlsx", "wolverine.xlsx", "otter.xlsx", "moose.xlsx","brownhare.xlsx", "ermine.xlsx", "roedeer.xlsx", "mink.xlsx", "redfox.xlsx", "redsquirrel.xlsx", "racoondog.xlsx", "wtaileddeer.xlsx", "weasel.xlsx")
 datasets <- paste0(file_path, datasets)
 
 # Initialize a list to store models and their R^2 values
@@ -93,23 +93,23 @@ if (!is.null(collinearity_check)) {
 }
 
 # Apply the function to each dataset one by one
-process_dataset(datasets[1])  # brownhare3.xlsx
-process_dataset(datasets[2])  # ermine3.xlsx
-process_dataset(datasets[3])  # roedeer3.xlsx
-process_dataset(datasets[4])  # mink3.xlsx
-process_dataset(datasets[5])  # redfox3.xlsx
-process_dataset(datasets[6])  # redsquirrel3.xlsx
-process_dataset(datasets[7])  # racoondog3.xlsx
-process_dataset(datasets[8])  # wtaileddeer3.xlsx
-process_dataset(datasets[9])  # weasel3.xlsx
-process_dataset(datasets[1])  # mountainhare3.xlsx
-process_dataset(datasets[2])  # pinemarten3.xlsx
-process_dataset(datasets[3])  # forestreindeer3.xlsx
-process_dataset(datasets[4])  # lynx3.xlsx
-process_dataset(datasets[5])  # wolf3.xlsx
-process_dataset(datasets[6])  # wolverine3.xlsx
-process_dataset(datasets[7])  # otter3.xlsx
-process_dataset(datasets[8])  # moose3.xlsx
+process_dataset(datasets[1])  # brownhare.xlsx
+process_dataset(datasets[2])  # ermine.xlsx
+process_dataset(datasets[3])  # roedeer.xlsx
+process_dataset(datasets[4])  # mink.xlsx
+process_dataset(datasets[5])  # redfox.xlsx
+process_dataset(datasets[6])  # redsquirrel.xlsx
+process_dataset(datasets[7])  # racoondog.xlsx
+process_dataset(datasets[8])  # wtaileddeer.xlsx
+process_dataset(datasets[9])  # weasel.xlsx
+process_dataset(datasets[1])  # mountainhare.xlsx
+process_dataset(datasets[2])  # pinemarten.xlsx
+process_dataset(datasets[3])  # forestreindeer.xlsx
+process_dataset(datasets[4])  # lynx.xlsx
+process_dataset(datasets[5])  # wolf.xlsx
+process_dataset(datasets[6])  # wolverine.xlsx
+process_dataset(datasets[7])  # otter.xlsx
+process_dataset(datasets[8])  # moose.xlsx
 
 # Print all R^2 values and collinearity checks at the end
 cat("All R^2 values:\n")
